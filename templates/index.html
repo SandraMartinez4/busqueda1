@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rutas de Carretera</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #005387, #16e6df);
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        .contenedor {
+            margin-top: 100px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d48f0d;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #74cc00;
+        }
+
+        .resultado {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #00ff9d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>Carretera</h1>
+
+        <form method="POST">
+            <input type="text" name="inicio" placeholder="Ciudad origen" required>
+            <input type="text" name="destino" placeholder="Ciudad destino" required>
+            <br><br>
+            <button type="submit">Buscar Carretera</button>
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                {{ resultado }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
